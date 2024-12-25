@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Park Edildi</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0B3D91;
+            --secondary-color: #1E88E5;
+            --accent-color: #64B5F6;
+            --text-color: #2C3E50;
+            --light-text: #ECF0F1;
+            --background: #F8FAFC;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>'),
+                            linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--light-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                0 4px 8px rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo {
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--light-text);
+            letter-spacing: -0.02em;
+        }
+
+        .status-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 16px 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 32px;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            background: var(--light-text);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            background: #FFFFFF;
+        }
+
+        .cta-button i {
+            margin-left: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="ekasunucu-logo.svg" alt="Domain Park" class="logo">
+        </div>
+        <h1>Domain Park Edildi</h1>
+        <p id="domain-info">Bu alan adı zamanında yenilenmediği için park edilmiştir.</p>
+        <p id="domain-action">Alan adınızı tekrar aktif hale getirmek veya daha fazla bilgi almak için bizimle iletişime geçebilirsiniz.</p>
+        <a href="https://www.ekasunucu.com" class="cta-button">
+            Eka Sunucu ile İletişime Geçin
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+    <script>
+        const domainName = window.location.hostname;
+
+        document.getElementById('domain-info').textContent = `${domainName} zamanında yenilenmediği için park edilmiştir.`;
+        document.getElementById('domain-action').textContent = `${domainName} alan adınızı tekrar aktif hale getirmek veya daha fazla bilgi almak için bizimle iletişime geçebilirsiniz.`;
+    </script>
+</body>
+</html>
