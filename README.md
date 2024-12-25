@@ -13,6 +13,10 @@ Bu proje, alan adınızın zamanında yenilenmediği durumlarda kullanılmak üz
 
 ![Domain Park Sayfası Örneği](Screenshot.png)
 
+## Canlı Demo
+
+Projeyi canlı olarak incelemek için [buraya tıklayabilirsiniz](https://ekayazilim.github.io/domain-park/).
+
 ## Kullanım
 
 1. Proje dosyalarını indirin veya kopyalayın.
