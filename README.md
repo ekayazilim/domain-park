@@ -11,7 +11,7 @@ Bu proje, alan adınızın zamanında yenilenmediği durumlarda kullanılmak üz
 
 ## Ekran Görüntüsü
 
-![Domain Park Sayfası Örneği](ekran-goruntusu.png)
+![Domain Park Sayfası Örneği](Screenshot.png)
 
 ## Kullanım
 
